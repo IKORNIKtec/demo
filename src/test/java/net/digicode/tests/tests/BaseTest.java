@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import utils.GmailUtils;
 
 import static org.junit.Assume.assumeFalse;
+import static org.junit.Assume.assumeTrue;
 
 /**
  * Created by WWW on 21.06.2015.
@@ -36,7 +37,9 @@ public abstract class BaseTest {
         webdriver.manage().deleteAllCookies();
         final String email = user.getEmail();
         boolean isUserExist =  GmailUtils.isUserExist(email);
-        assumeFalse(String.format("User with email %s not exist", email), isUserExist);
+        logger.info("User '{}' {} Exist", email, isUserExist?"":"not");
+        assumeTrue(String.format("User with email %s not exist", email), isUserExist);
+
 
         // TODO : will be implemented
         /*

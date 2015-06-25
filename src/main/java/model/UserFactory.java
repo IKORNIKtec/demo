@@ -11,6 +11,6 @@ public class UserFactory {
     }
 
     public static User getExisingUser(){
-        return new User("digicodeuser", "Digicode123!");
+        return new User("dctestusr001@gmail.com", "Digicode123!");
     }
 }
